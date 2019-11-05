@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import classes from './App.css';
-import stylki from '../componens/Persons/Person/Person.css';
 import Persons from '../componens/Persons/Persons';
+import Cocpit from '../componens/Cocpit/Cocpit';
 
 class App extends Component {
 state = {
@@ -20,6 +20,8 @@ state = {
 togglePersonHandler = () => {
   const doesShow = this.state.showPerson;
   this.setState({showPerson: !doesShow})}
+
+
 
   //{ this.state.showPerson === true ? <div>....</div> : null} zwykly skrocony if. Plus onClick={this.togglePersonHandler}
 
@@ -85,19 +87,15 @@ togglePersonHandler = () => {
     };*/
 
     let persons = null;
-    let btnClass = '';
+    
 
     if (this.state.showPerson) {
-     persons = (
-
-      <div>
+     persons = 
         <Persons 
         persons={this.state.persons}
         changed={this.nameChangedHandler}
         clicked={this.deletePersonHandler}
         />
-
-      </div>
 
      /* <div>
         {this.state.persons.map((person, index) => {
@@ -110,35 +108,20 @@ togglePersonHandler = () => {
         })}
       
       </div>*/
-     )
+     
 
-     btnClass = classes.Red;
+     
      /*style.backgroundColor = 'red';*/
     
     }
 
-    const assignedClasses = [];
-
-    if (this.state.persons.length <=2) {
-     assignedClasses.push( classes.border );
-    }
-
-    if (this.state.persons.length <=1) {
-      assignedClasses.push( classes.red )
-    }
-
-
-   
+  
 
 
     return (
    
       <div className={classes.App}>
-       <h1 className={stylki.style}>Hi, I'm a RReact App</h1>
-       <p className={assignedClasses.join(' ')}>Dziala!</p>
-       <button className={btnClass}
-       
-       onClick={this.togglePersonHandler}>Toggle Person</button>
+      <Cocpit showPerson={this.state.showPerson} persons={this.state.persons} clicked={this.togglePersonHandler} />
       { persons }
       </div>
     );

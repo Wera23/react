@@ -1,0 +1,38 @@
+
+.red{
+    color: red;
+  }
+  
+  .border{
+  text-decoration: underline;
+  }
+
+
+  
+
+.Cocpit {
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+  }
+  
+  .Cocpit button {
+    background-color: green;
+    padding: 20px;
+    color: white;
+  }
+  
+  .Cocpit button:hover{
+  background-color: lightgreen;
+  }
+  
+  
+  .Cocpit button.Red{
+    background-color: red;
+  }
+  
+  .Cocpit button.Red:hover{
+    background-color: rebeccapurple;
+  }
+  
+  
